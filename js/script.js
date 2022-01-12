@@ -6,3 +6,10 @@ va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65.
 Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato con massimo due decimali, per indicare centesimi sul prezzo).
 */
+
+//prendere i dati dall'utente
+
+const userName=document.getElementById('.user-name');
+const userKm=document.getElementById('.user-km');
+
+console.log(userName, userKm)
