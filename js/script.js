@@ -11,14 +11,36 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 
 const userName=document.getElementById('user-name');
 const userKm=document.getElementById('user-km');
+const userAge=document.getElementById('inputState');
+
+//elementi nel DOM da stampare
+const ticketPrint=document.getElementById('ticket-price')
 
 const buttonGen=document.getElementById('genera');
 let namePrint=''
 let kmPrint=''
+let agePrint=''
+
 buttonGen.addEventListener('click', function(){
-        namePrint=userName
-        kmPrint=userKm
+        namePrint=userName.value
+        kmPrint=userKm.value
+        agePrint=userAge.value
+        console.log(namePrint, kmPrint, agePrint)
     
+        //! validazione numero km
+        if(isNaN(kmPrint)){
+            alert('Non è un numero');
+        }
+
+        //calcolo prezzo del biglietto
+        let ticketPrice = kmPrint * 0.21;
+        console.log(ticketPrice)
+
+        //stampo prezzo biglietto
+        ticketPrint.innerText=ticketPrice
+        
+        
+        
+        
+    })
     
-})
-console.log(namePrint, kmPrint)
