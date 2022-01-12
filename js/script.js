@@ -9,7 +9,16 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 
 //prendere i dati dall'utente
 
-const userName=document.getElementById('.user-name');
-const userKm=document.getElementById('.user-km');
+const userName=document.getElementById('user-name');
+const userKm=document.getElementById('user-km');
 
-console.log(userName, userKm)
+const buttonGen=document.getElementById('genera');
+let namePrint=''
+let kmPrint=''
+buttonGen.addEventListener('click', function(){
+        namePrint=userName
+        kmPrint=userKm
+    
+    
+})
+console.log(namePrint, kmPrint)
