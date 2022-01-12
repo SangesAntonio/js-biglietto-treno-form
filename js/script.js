@@ -15,44 +15,51 @@ const userAge=document.getElementById('inputState');
 
 //elementi nel DOM da stampare
 const ticketPrint=document.getElementById('ticket-price')
-const userTicket=document.getElementById('user-ticket')
+const user=document.getElementById('user-ticket')
+const discount=document.getElementById('discount');
+
 
 const buttonGen=document.getElementById('genera');
-let namePrint=''
-let kmPrint=''
-let agePrint=''
-
 buttonGen.addEventListener('click', function(){
-    namePrint=userName.value
-    kmPrint=userKm.value
-    agePrint=parseInt(userAge.value);
-    console.log(namePrint, kmPrint, agePrint)
-    userTicket.innerText=namePrint
+    const nameValue=userName.value;
+    const kmValue=parseInt(userKm.value);
+    let ageValue=parseInt(userAge.value);
     
-        //calcolo prezzo del biglietto
-        
-        //stampo prezzo biglietto
-        
-        //calcolo discount
-        let discountOverAge;
-        let discountUnderAge;
-        let ticketPrice = kmPrint * 0.21;
-        
-        if(agePrint = 18){
-            discountUnderAge=(ticketPrice / 100) * 20;
-            ticketPrice += discountUnderAge;
+    console.log(nameValue, kmValue, ageValue);
+    
+    //calcolo prezzo del biglietto
+    let ticketPrice = kmValue * 0.21;
+    
+    
+    user.innerText=nameValue
+    //calcolo discount
+    /*let discountOverAge;
+    let discountUnderAge;*/
+    if(ageValue){
+
+        if(ageValue == 18){
+            const discountUnderAge=(ticketPrice / 100) * 20;
+            ticketPrice = ticketPrice - discountUnderAge;
+            
+            ticketPrint.innerText=ticketPrice.toFixed(2)
+            console.log(ticketPrice) 
             
             
             
-        } else if (agePrint = 65){
-            discountOverAge = (ticketPrice / 100) * 40;
-            ticketPrice += discountOverAge;
+        } else if (ageValue == 65){
+            const discountOverAge = (ticketPrice / 100) * 40;
+            ticketPrice = ticketPrice - discountOverAge;
+            ticketPrint.innerText=ticketPrice.toFixed(2)
+            console.log(ticketPrice) 
             
         }
-            
-        ticketPrint.innerText=ticketPrice.toFixed(2)
-        
-        console.log(ticketPrice) 
+    }
+    
+    ticketPrint.innerText=ticketPrice.toFixed(2)
+    
+    
+    
+    console.log(ticketPrice) 
         
 })
     
