@@ -30,20 +30,22 @@ buttonGen.addEventListener('click', function(){
     //calcolo prezzo del biglietto
     let ticketPrice = kmValue * 0.21;
     
-    
+    //stampo nome utente
     user.innerText=nameValue
+    
     //calcolo discount
-    /*let discountOverAge;
-    let discountUnderAge;*/
+    discount.innerText='Biglietto standard'
+    
+    
     if(ageValue){
-
         if(ageValue == 18){
             const discountUnderAge=(ticketPrice / 100) * 20;
             ticketPrice = ticketPrice - discountUnderAge;
-            
             ticketPrint.innerText=ticketPrice.toFixed(2)
             console.log(ticketPrice) 
             
+            //stampo tipo di biglietto
+            discount.innerText='Biglietto minorenni'
             
             
         } else if (ageValue == 65){
@@ -51,14 +53,15 @@ buttonGen.addEventListener('click', function(){
             ticketPrice = ticketPrice - discountOverAge;
             ticketPrint.innerText=ticketPrice.toFixed(2)
             console.log(ticketPrice) 
+
+            //stampo tipo di biglietto
+            discount.innerText='Biglietto senior'
             
         }
     }
-    
+
+    //stampo prezzo biglietto
     ticketPrint.innerText=ticketPrice.toFixed(2)
-    
-    
-    
     console.log(ticketPrice) 
         
 })
