@@ -1,4 +1,19 @@
-.cs-text h4{
+table tr td{
     display: inline-block;
-    padding: 20px;
+    margin-left: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 20%;
+}
+
+
+table{
+    width: 100%;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.cs-round{
+    border-radius: 20px;
+    box-shadow: 0 0 19px 5px rgba(0, 0, 0, 0.315);
 }

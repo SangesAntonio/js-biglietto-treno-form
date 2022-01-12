@@ -15,6 +15,7 @@ const userAge=document.getElementById('inputState');
 
 //elementi nel DOM da stampare
 const ticketPrint=document.getElementById('ticket-price')
+const userTicket=document.getElementById('user-ticket')
 
 const buttonGen=document.getElementById('genera');
 let namePrint=''
@@ -22,25 +23,36 @@ let kmPrint=''
 let agePrint=''
 
 buttonGen.addEventListener('click', function(){
-        namePrint=userName.value
-        kmPrint=userKm.value
-        agePrint=userAge.value
-        console.log(namePrint, kmPrint, agePrint)
+    namePrint=userName.value
+    kmPrint=userKm.value
+    agePrint=parseInt(userAge.value);
+    console.log(namePrint, kmPrint, agePrint)
+    userTicket.innerText=namePrint
     
-        //! validazione numero km
-        if(isNaN(kmPrint)){
-            alert('Non è un numero');
-        }
-
         //calcolo prezzo del biglietto
-        let ticketPrice = kmPrint * 0.21;
-        console.log(ticketPrice)
-
+        
         //stampo prezzo biglietto
-        ticketPrint.innerText=ticketPrice
         
+        //calcolo discount
+        let discountOverAge;
+        let discountUnderAge;
+        let ticketPrice = kmPrint * 0.21;
         
+        if(agePrint = 18){
+            discountUnderAge=(ticketPrice / 100) * 20;
+            ticketPrice += discountUnderAge;
+            
+            
+            
+        } else if (agePrint = 65){
+            discountOverAge = (ticketPrice / 100) * 40;
+            ticketPrice += discountOverAge;
+            
+        }
+            
+        ticketPrint.innerText=ticketPrice.toFixed(2)
         
+        console.log(ticketPrice) 
         
-    })
+})
     

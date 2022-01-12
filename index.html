@@ -16,26 +16,30 @@
             <div class="col-12 text-center text-white">
                 <h1 class="mb-4">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
             </div>
-            <div class="col-12 px-3">
-                <form action="">
+            <div class="col-8 px-3 bg-white cs-round">
+                <form action="" class="container-fluid
+                pt-3 pb-4">
                     <div class="row justify-content-center gy-3">
 
                         <!--Imput nome e cognome-->
-                        <div class="col-2">
+                        <div class="col-3">
+                            <h4>Nome e Cognome</h4>
                             <input type="text" id="user-name" class="form-control" placeholder="Nome e Cognome" aria-label="First name">
                         </div>
                         
                         <!--Imput km da percorrere-->
-                        <div class="col-2">
+                        <div class="col-3">
+                            <h4>km da percorrere</h4>
                             <input type="text" id="user-km" class="form-control" placeholder="km da percorrere" aria-label="Last name">
                         </div>
                         
                         <!--Imput fascia d'età-->
-                        <div class="col-2">
+                        <div class="col-3">
+                            <h4>Fascia d'età</h4>
                             <select id="inputState" class="form-select">
                                 <option>--</option>
-                                <option>Under 18</option>
-                                <option>Over 65</option>
+                                <option value="18">Under 18</option>
+                                <option value="65">Over 65</option>
                             </select>
                         </div>
                         
@@ -52,28 +56,32 @@
             <div class="col-12 text-center text-white ">
                 <h1 class="mt-4 mb-4">IL TUO BIGLIETTO</h1>
             </div>
-            <div class="col-12 bg-white">
-                <h2>Dettagli passeggeri</h2>
-                <div class="row ">
+            <div class="col-9 bg-white">
+                <h2 class="ms-4 ps-4">Dettagli passeggeri</h2>
+                <div class="row justify-content-center">
                     <div class="col-4 bg-secondary ">
-                        <h3>Nome passeggero</h3>
-                        <h3>Antonio</h3>
+                        <h2>Nome passeggero</h2>
+                        <h3 id="user-ticket" class="mt-4"></h3>
                     </div>
                     <div class="col-7">
-                        <div class="row cs-text">
-                            <div class="col-12">
-                                <h4>Offerta</h4>
-                                <h4>Carrozza</h4>
-                                <h4>Codice icp</h4>
-                                <h4>Costo biglietto</h4>
-                            </div>
-                            <div class="col-12">
-                                <h4 id="discount">Offerta</h4>
-                                <h4 id="train">Carrozza</h4>
-                                <h4 id="cp-code">Codice cp</h4>
-                                <h4 id="ticket-price"></h4>
-                            </div>
-                        </div>
+                        <table class="fs-4">
+                            <thead>
+                                <tr>
+                                    <td>Offerta</td>
+                                    <td>Carrozza</td>
+                                    <td>Codice CP</td>
+                                    <td>Costobiglietto</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td id="discount">Minorenne</td>
+                                    <td id="carrozza">3</td>
+                                    <td id="codice-cp">65367</td>
+                                    <td id="ticket-price"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
