@@ -10,31 +10,71 @@
     <title>Document</title>
 </head>
 <body>
-    <main id="form-ticket" class="container-sm bg-danger">
+    <!--Form per chiedere dati all'utente-->
+    <main id="form-ticket" class="container-fluid bg-danger">
         <div class="row justify-content-center">
             <div class="col-12 text-center text-white">
                 <h1 class="mb-4">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
             </div>
             <div class="col-12 px-3">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center gy-3">
+
+                    <!--Imput nome e cognome-->
                     <div class="col-2">
-                      <input type="text" class="form-control" placeholder="Nome e Cognome" aria-label="First name">
+                        <input type="text" class="form-control" placeholder="Nome e Cognome" aria-label="First name">
                     </div>
+
+                    <!--Imput km da percorrere-->
                     <div class="col-2">
-                      <input type="text" class="form-control" placeholder="km da percorrere" aria-label="Last name">
+                        <input type="text" class="form-control" placeholder="km da percorrere" aria-label="Last name">
                     </div>
+
+                    <!--Imput fascia d'età-->
                     <div class="col-2">
                         <select id="inputState" class="form-select">
-                          <option>Under 18</option>
-                          <option>Over 65</option>
+                            <option>--</option>
+                            <option>Under 18</option>
+                            <option>Over 65</option>
                         </select>
-                      </div>
-                  </div>
+                    </div>
+
+                    <!--bottoni per invio e annullo form-->
+                    <div class="col-12 text-center">
+                        <button type="button" class="btn btn-primary">Invia</button>
+                        <button type="button" class="btn btn-danger">Annulla</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 text-center text-white">
+            
+            <!--visualizzazione dati raccolti -->
+            <div class="col-12 text-center text-white ">
                 <h1 class="mt-4 mb-4">IL TUO BIGLIETTO</h1>
             </div>
-            <div class="col-12"></div>
+            <div class="col-12 bg-white">
+                <h2>Dettaglo passeggeri</h2>
+                <div class="row ">
+                    <div class="col-4 bg-secondary ">
+                        <h3>Nome passeggero</h3>
+                        <h3>Antonio</h3>
+                    </div>
+                    <div class="col-7">
+                        <div class="row cs-text">
+                            <div class="col-12">
+                                <h4>Offerta</h4>
+                                <h4>Carrozza</h4>
+                                <h4>Codice icp</h4>
+                                <h4>Costo biglietto</h4>
+                            </div>
+                            <div class="col-12">
+                                <h4 class="discount">Offerta</h4>
+                                <h4 class="train">Carrozza</h4>
+                                <h4 class="cp-code">Codice cp</h4>
+                                <h4 class="ticket-price">Costo biglietto</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <script src="js/script.js"></script>
